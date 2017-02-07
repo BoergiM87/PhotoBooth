@@ -12,6 +12,11 @@ module.exports = function() {
 				//thumb : "./photos/pre_thumb/" + files[i]
 			})
 		}
+		if (photos.length < 1) {
+			photos.push( {
+				image : "./img/No-Photo-Available.jpg"
+			})
+		}
 	}
 	return photos
 };
