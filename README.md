@@ -18,5 +18,5 @@ Run:
 * open the http://localhost:3000
 
 Control:
-Press "B" to take a Photo
-Press "right arrow key" or "left arrow key" to navigate the gallery
+* Press "B" to take a Photo
+* Press "right arrow key" or "left arrow key" to navigate the gallery
