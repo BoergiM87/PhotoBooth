@@ -151,7 +151,7 @@
 				random					: 	0,			// Randomize slide order (Ignores start slide)
 				slide_interval          :   3000,		// Length between transitions
 				transition              :   1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-				transition_speed		:	500,		// Speed of transition
+				transition_speed		:	1000,		// Speed of transition
 				new_window				:	1,			// Image links open in new window/tab
 				pause_hover             :   0,			// Pause slideshow on hover
 				keyboard_nav            :   1,			// Keyboard navigation on/off
@@ -169,7 +169,7 @@
 														   
 				// Components							
 				slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
-				thumb_links				:	0,			// Individual thumb links for each slide
+				thumb_links				:	1,			// Individual thumb links for each slide
 				thumbnail_navigation    :   0,			// Thumbnail navigation
 				slides 					:  	arr,
 											

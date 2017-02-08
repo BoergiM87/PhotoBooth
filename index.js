@@ -13,6 +13,8 @@ var express = require('express'),
 	formatdate = require('date-format'),
 	mv = require('mv'),
 	hbs;
+var config = JSON.parse(fs.readFileSync("./config.json")),
+	frontend = config.frontend;
 
 hbs = exphbs.create({
 	defaultLayout: 'main',
@@ -52,9 +54,11 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/', function(req, res) {
-	
 	res.render('home', {
-		title: 'PhotoBooth'
+		title: 'PhotoBooth',
+		takePhotoButton: frontend.takePhotoButton,
+		showNavigation: frontend.showNavigation,
+		showThumbnailBar: frontend.showThumbnailBar
 	});
 });
 
@@ -65,12 +69,12 @@ app.post('/takephoto/', function(req, res) {
 	io.emit('data', {
 		takePhoto: true
 	});
-	exec( 'gphoto2 --capture-image-and-download --filename=' + newPhoto, newPhoto, io ).then(function(result) { console.log(result); });
+	exec( 'gphoto2 --capture-image-and-download --filename=' + newPhoto, newPhoto, io , frontend.showThumbnailBar ).then(function(result) { console.log(result); });
 	res.json({ success: true });
 });
 
 app.post('/getphotos/', function(req, res) {
-	var photos = new readImageDir();
+	var photos = new readImageDir(frontend.showThumbnailBar);
 	res.json({ success: true, data: photos });
 });
 

@@ -20,3 +20,15 @@ Run:
 Control:
 * Press "B" to take a Photo
 * Press "right arrow key" or "left arrow key" to navigate the gallery
+
+Frontend Config:
+
+```
+{
+	"frontend": {
+		"takePhotoButton": true, //Show a Button to take the photo
+		"showNavigation": true, //Shows a navigation for the main gallery
+		"showThumbnailBar": true //Shows a small preview bar at the bottom
+	}
+}
+```

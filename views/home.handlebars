@@ -1,9 +1,21 @@
+{{#if takePhotoButton}}
+<nav class="top-menu">
+	<div id="shout" class="flaticon-technology icon-menu"></div>
+</nav>
+{{/if}}
+
 <div class="center">
 	<div id="countdown">
 		<div id="counter"></div>
 	</div>
 </div>
 
+{{#if showNavigation}}
+<a id="prevslide" class="load-item"></a>
+<a id="nextslide" class="load-item"></a>
+{{/if}}
+
+{{#if showThumbnailBar}}
 <div id="prevthumb"></div>
 <div id="nextthumb"></div>
 
@@ -11,3 +23,12 @@
 	<div id="thumb-back"></div>
 	<div id="thumb-forward"></div>
 </div>
+<div id="controls-wrapper" class="load-item">
+	<div id="controls">
+		
+		<!--Thumb Tray button-->
+		<a id="tray-button"><img id="tray-arrow" src="img/button-tray-up.png"/></a>
+		
+	</div>
+</div>
+{{/if}}

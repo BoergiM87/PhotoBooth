@@ -3,7 +3,7 @@ var exec = require('child_process').exec,
 	genThumbnails = require('../genThumbnails'),
     q = require('q');
 
-module.exports = function(command, newPhoto, io, callback) {
+module.exports = function(command, newPhoto, io, showThumbnailBar, callback) {
     var deferred = q.defer();
 
     exec(command, function(err, result) {
@@ -17,7 +17,7 @@ module.exports = function(command, newPhoto, io, callback) {
 					console.log(err)
 				}
 			});
-			genThumbnails(newPhoto , io);
+			genThumbnails(newPhoto , io, showThumbnailBar);
         } else {
             deferred.reject(err);
         }

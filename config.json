@@ -1,0 +1,7 @@
+{
+	"frontend": {
+		"takePhotoButton": true,
+		"showNavigation": true,
+		"showThumbnailBar": true
+	}
+}

@@ -2,7 +2,7 @@ var path = require('path'),
 	easyimg = require('easyimage'),
 	q = require('q');
 
-module.exports = function(photo, io) {
+module.exports = function(photo, io, showThumbnailBar) {
 	var thumbShow = false,
 		thumbPre = false;
 	
@@ -22,19 +22,21 @@ module.exports = function(photo, io) {
 			function (err) {
 				console.log(err);
 			});
-		/*easyimg.rescrop({
-			src: "./public/photos/" + photo,
-			dst: "./public/photos/pre_thumb/" + photo,
-			width: 200
-		}).then(
-			function(image) {
-				console.log('Resized and cropped: ' + image.width + ' x ' + image.height);
-				thumbPre = true;
-			},
-			function (err) {
-				console.log(err);
-			});*/
-	}
+		if (showThumbnailBar) {
+			easyimg.rescrop({
+				src: "./public/photos/" + photo,
+				dst: "./public/photos/pre_thumb/" + photo,
+				width: 200
+			}).then(
+				function(image) {
+					console.log('Resized and cropped: ' + image.width + ' x ' + image.height);
+					thumbPre = true;
+				},
+				function (err) {
+					console.log(err);
+			});
+		}
+	};
 	genThumb();
 
 };
